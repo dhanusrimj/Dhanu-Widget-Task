@@ -1,0 +1,9 @@
+
+sample:
+Service Name = Stored Procedure Name
+
+Bank-Widget:
+GetBankCustomers=sp_Bank_Customer_select_details
+PushBankCustomers=sp_Bank_Customer_insert_Details
+PushBankCallDisposal=SP_Bank_Customer_call_disposal_details
+GetBankCallDisposal=SP_Bank_Customer_call_disposal_select_details
