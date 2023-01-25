@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BCS.com </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="bg-image" style="
+    background-image: url('https://cdn.w600.comps.canstockphoto.com/bank-man-money-2-stock-illustrations_csp0788357.jpg');
+      background-repeat: no-repeat;
+    background-size:100%;
+    
+    height: 100vh;
+  ">
+        <!--<style>
+        body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .hero-image {
+          background-image: url("C:\Users\User\Downloads\money-g4ae2a4e53_1920.jpg");
+          background-color: #cccccc;
+          height: 500px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          position: relative;
+        }
+        
+        .hero-text {
+          text-align: center;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+        }
+        </style>-->
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+        <style>
+        body {
+            background-image: url('https://pixabay.com/photos/money-coin-investment-business-2724241/');
+        }
+    </style>-->
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <!--   <h1 style=" text-align: center;
+    background: #efe8eede;
+    background: linear-gradient(to right, rgba(253, 252, 253, 0.886) 0%, rgba(249, 246, 249, 0.911) 20%, rgba(243, 238, 241, 0.894) 61%), linear-gradient(rgba(247, 240, 244, 0.903) 52%, rgb(224, 246, 255) 60%, rgba(250, 245, 248, 0.89) 61%);
+">-->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn.vectorstock.com/i/1000x1000/69/20/call-center-operator-avatar-vector-10736920.webp"
+                        alt="Logo" style="width:40px;" class="rounded-pill">
+                </a>
+                <div class="w3-container w3-center w3-animate-top">
+                    <h1><U>BANK CUSTOMER SERVICE</U></h1>
+                </div>
+                </h1>
+
+                <ul class="nav nav-tabs">
+                    <!--<li class="active"><span class="badge bg-info"><a data-toggle="tab" href="#home">Home</a></span>
+                    </li>-->
+                    <button type="button" class="btn btn-primary">
+                        <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+                    </button>
+                    <!-- <li class="active"><a data-toggle="tab" href="#home">Home</a></li>-->
+                    <button type="button" class="btn btn-primary">
+                        <li><a data-toggle="tab" href="#Deatils">Bank Customer Details</a></li>
+                    </button>
+                    <!-- <button type="button" class="btn btn-dark"><li><a data-toggle="tab" href="#Deatils">Bank Customer Details</a></li></button>
+                    <li><a data-toggle="tab" href="#Deatils">Bank Customer Details</a></li>-->
+                    <button type="button" class="btn btn-primary">
+                        <li><a data-toggle="tab" href="#disposal">Call Disposal</a></li>
+                    </button>
+                    <!-- <li><a data-toggle="tab" href="#disposal">Call Disposal</a></li>-->
+                    <button type="button" class="btn btn-primary">
+                        <li><a data-toggle="tab" href="#history">call History</a></li>
+                    </button>
+                    <!-- <li><a data-toggle="tab" href="#history">call History</a></li>-->
+                </ul>
+                <div ng-app="myApp" ng-controller="myCtrl">
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+
+
+                            <center>
+                                <div class="w3-container w3-center w3-animate-right">
+
+                                    <h2><b>Widget Bank Agent Visibility</b><br></h2>
+
+                                </div>
+
+                                <div class="w3-container w3-center w3-animate-left">
+                                    <h3><I>welcome's you</I></h3>
+                                </div>
+                                <img src="https://akm-img-a-in.tosshub.com/businesstoday/images/story/201806/bad-bank_660_061118064321_061418070633.jpg?size=948:533"
+                                    class="mx-auto d-block" style="width:20%">
+                            </center>
+
+                        </div>
+                        <div id="Deatils" class="tab-pane fade">
+                            <center>
+
+                                <h3 class="text-dark"> Account Number: </h3>
+                                <input type="text" id="Account_Number" placeholder="****" ng-model="call.Account_Number"
+                                    name="Account_Number" style="border-radius: 10px;">
+                                <br><br>
+                                <!--<button id="save" ng-click="getFormuser(call)" style="border-radius: 10px;">search</button>-->
+
+                                <button id="save" class="btn btn-info" ng-click="getFormuser(call)">
+                                    <span class="glyphicon glyphicon-search"></span> Search</button>
+                            </center>
+
+
+                            <h4 class="pb-4 px-4 text-white" ng-show="pre"> Bank Customer Details:</h4>
+                            <table class="table table-bordered table-sm mx-3" border="1" ng-show="pre">
+                                <thead class="table-white">
+                                    <tr>
+                                        <th style="width:150px">Account_Number</th>
+                                        <th style="width:150px">customer_id</th>
+                                        <th style="width:150px">customer_name</th>
+                                        <th style="width:150px">Account_opening_date</th>
+                                        <th style="width:150px">Branch_ID</th>
+                                        <th style="width:150px">Account_status</th>
+                                        <th style="width:150px">Customer_mob_no</th>
+                                        <th style="width:150px">Customer_Email</th>
+                                        <th style="width:150px">Credit_card_number</th>
+
+
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="tuser in myWelcome">
+                                        <td>{{ tuser.Account_Number }}</td>
+                                        <td>{{ tuser.customer_id }}</td>
+                                        <td>{{ tuser.customer_name }}</td>
+                                        <td>{{ tuser.Account_opening_date }}</td>
+                                        <td>{{ tuser.Branch_ID }}</td>
+                                        <td>{{ tuser.Account_status }}</td>
+                                        <td>{{ tuser.Customer_mob_no }}</td>
+                                        <td>{{ tuser.Customer_Email }}</td>
+                                        <td>{{ tuser.Credit_card_number }}</td>
+
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="disposal" class="tab-pane fade">
+
+                            <center>
+                                <form name="clickme">
+
+                                    <!-- <form action="/action_page.php" class="was-validated">
+                                    <form class="row g-3 needs-validation" name="custform" novalidate>-->
+                                    <div class="mb-3 mt-3"></div>
+                                    <h3 class="text-dark"> Interaction ID: </h3>
+                                    <input type="number" id="intr_id" ng-model="call.Interaction_ID" name="intr_id"
+                                        required style="border-radius: 10px;"> <!--<label id="lbsuccessMessageName"></label>
+                                <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>-->
+
+                                    <h3 class="text-dark"> Mobile Number: </h3>
+                                    <input type="number" id="ph_no" ng-model="call.Customer_mob_no" name="ph_no"
+                                        required style="border-radius: 10px;"><!--<label id="lbsuccessMessageName2"></label>
+                                 <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please fill out this field.</div>-->
+
+                                    <h3 class="text-dark"> Call Disposal: </h3>
+                                    <select id="disposal" name="disposal" ng-model="call.disposal"
+                                        style="border-radius: 10px;"><!--<label id="lbsuccessMessageName3"></label>-->
+                                        <option value>SELECT</option>
+                                        <option id="ava" class="dropdown-item" value="available">available</option>
+                                        <option id="busy" class="dropdown-item" value="busy">busy</option>
+                                    </select><br />
+                                    <h3 class="text-dark"> Reason: </h3>
+                                    <select id="reason" name="Reason" ng-model="call.Reason"
+                                        style="border-radius: 10px;"><!--<label id="lbsuccessMessageName4"></label>-->
+                                        <option value>SELECT</option>
+                                        <option value="Checking Account Balance">Checking Account Balance</option>
+                                        <option value="Checking Credit card Number">Checking Credit card Number</option>
+                                        <option value="Checking E-mail Address">Checking E-mail Address</option>
+                                        <option id=cncl value="cancel"> cancel</option>
+                                    </select><br />
+                                    <h3 class="text-dark"> Call Start Time:</h3>
+                                    <input type="text" id="call_start_time" ng-model="call.call_start_time"
+                                        name="call_start_time" required style="border-radius: 10px;"><!--<label
+                                    id="lbsuccessMessageName5"></label>-->
+                                    <h3 class="text-dark"> Call End Time:</h3>
+                                    <input type="text" id="call_end_time" ng-model="call.call_end_time"
+                                        name="call_end_time" required
+                                        style="border-radius: 10px;"><!--<label id="lbsuccessMessageName6"></label>-->
+                                    <h3 class="text-dark">Called Date:</h3>
+                                    <input type="text" id="call_end_time" ng-model="call.date_call" name="date_call"
+                                        required
+                                        style="border-radius: 10px;"><!--<label id="lbsuccessMessageName7"></label>-->
+                                    <br><br>
+                                    <button id="save" ng-click="myfunction(call)" ng-disabled="clickme.$invalid"
+                                        style="border-radius: 10px;" class="btn btn-success">save</button>
+                                    <!--<button type="button" class="btn btn-success">Success</button>
+                     <div class="alert alert-success">
+                        <strong>Success!</strong>-->
+
+                                </form>
+                            </center>
+                        </div>
+
+                        <div id="history" class="tab-pane fade">
+                            <div align=center>
+
+
+                                <h3 class="text-dark"> Mobile Number: </h3><br>
+                                <input type="text" id="Customer_mob_no" ng-model="call.Customer_mob_no"
+                                    name="Customer_mob_no" style="border-radius: 10px;"><br><br>
+                                <!--<button id="save" ng-click="myfunction1(call)">callhistory</button>
+                        <button id="save" class="btn btn-info"  ng-click="myfunction1(call)">
+                            <span class="glyphicon glyphicon-search"></span> call history</button>-->
+                                <button class="btn btn-primary" ng-click="myfunction1(call)">
+                                    <span class="spinner-border spinner-border-sm"></span>
+                                    call history..
+                                </button>
+                                <b>
+                                    <p>chd:</p>
+                                </b>
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="#history">Previous</a></li>
+                                    <li class="page-item"><a class="page-link" href="#disposal">Next</a></li>
+                                </ul>
+
+
+
+                                <b>
+                                    <h4 class="pb-4 px-4 text-white" ng-show="history">Call History Details: </h4>
+                                </b>
+                                <table class="table table-bordered table-sm mx-3" ng-show="history">
+                                    <table class="paginated">
+
+
+
+                                        <thead class="table-white">
+                                            <tr>
+                                                <th style="width:150px">Interaction_ID</th>
+                                                <th style="width:150px">Reason</th>
+                                                <th style="width:150px">Customer_mob_no</th>
+                                                <th style="width:150px">call_start_time</th>
+                                                <th style="width:150px">call_end_time</th>
+                                                <th style="width:150px">date_call</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="tuser in myWelcome2">
+                                                <td>{{ tuser.Interaction_ID }}</td>
+                                                <td>{{ tuser.Reason }}</td>
+                                                <td>{{ tuser.Customer_mob_no }}</td>
+                                                <td>{{ tuser.call_start_time }}</td>
+                                                <td>{{ tuser.call_end_time }}</td>
+                                                <td>{{ tuser.date_call }}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+
+
+
+
+                    var app = angular.module('myApp', []);
+                    app.controller('myCtrl', function ($scope, $http) {
+
+
+                        //$scope.jsonData2 = [];
+                        $scope.getFormuser = function (data) {
+                            $scope.pre = true;
+                            //$scope.jdata2 = JSON.stringify(data);
+                            var servicedata1 = {
+                                "serviceName": "GetBankCustomers",
+                                "requestData": "{\"Account_Number\":\"" + data.Account_Number + "\"}"
+                            }
+
+                            $http({
+                                method: "POST",
+                                url: "http://192.168.1.128:8080/CustomWidgetMiddleware/customWidgetPostRequest",
+                                dataType: 'json',
+                                data: JSON.stringify(servicedata1),
+                            }).then(function mySuccess(response) {
+                                $scope.myWelcome = response.data.result;
+                            }, function myError(response) {
+                                $scope.myWelcome = response.statusText;
+                            });
+                        };
+
+                        $scope.myfunction = function (data) {
+                            //$scope.jdata2 = JSON.stringify(data);
+                            var servicedata2 = {
+                                "serviceName": "PushBankCallDisposal",
+                                "requestData": "{\"Interaction_ID\":\"" + data.Interaction_ID + "\",\"Reason\":\"" + data.Reason + "\",\"Customer_mob_no\":\"" + data.Customer_mob_no + "\",\"call_start_time\":\"" + data.call_start_time + "\",\"call_end_time\":\"" + data.call_end_time + "\",\"date_call\":\"" + data.date_call + "\"}"
+                            }
+                            $http({
+                                method: "POST",
+                                url: "http://192.168.1.128:8080/CustomWidgetMiddleware/customWidgetPostRequest",
+                                dataType: 'json',
+                                data: JSON.stringify(servicedata2),
+                            }).then(function mySuccess(response) {
+                                alert("CONGRATULATION! your insertion was Successfull");
+                                $scope.myWelcome1 = response;
+
+                            }, function myError(response) {
+                                //alert("SORRY! your insertion was failed");
+                                $scope.myWelcome1 = response.statusText;
+                            });
+                        };
+
+                        $scope.myfunction1 = function (data) {
+                            $scope.history = true;
+                            angular.element(document).ready(function () {
+                                dTable = $('#user_table')
+                                dTable.DataTable();
+                            });
+
+                            //$scope.jdata2 = JSON.stringify(data);
+                            var servicedata3 = {
+                                "serviceName": "GetBankCallDisposal",
+                                "requestData": "{\"Customer_mob_no\":\"" + data.Customer_mob_no + "\"}"
+                            }
+                            $http({
+                                method: "POST",
+                                url: "http://192.168.1.128:8080/CustomWidgetMiddleware/customWidgetPostRequest",
+                                dataType: 'json',
+                                data: JSON.stringify(servicedata3),
+                            }).then(function mySuccess(response) {
+                                $scope.myWelcome2 = response.data.result;
+                                $scope.MyOrders = data.d.results;
+                            }, function myError(response) {
+                                $scope.myWelcome2 = response.statusText;
+                            });
+                        };
+                    });
+                </script>
+</body>
+
+</html>
